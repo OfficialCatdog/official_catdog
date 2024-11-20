@@ -1,0 +1,166 @@
+/* 기본 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* 페이지 전체 높이를 100vh로 설정 */
+    background-color: #fffacd; /* 연한 노랑 배경 */
+    overflow-x: hidden; /* 가로 스크롤을 없애기 위해 */
+}
+
+/* 인트로 화면 스타일 */
+#intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fffacd; /* 배경색 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.intro-image {
+    width: 700px;
+    height: 700px;
+    animation: rotateZoomOut 2s forwards; /* 애니메이션 적용: 2초로 설정 */
+}
+
+/* 1080도 회전 + 크기 줄어들기 + 사라지기 */
+@keyframes rotateZoomOut {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(540deg) scale(0.5);
+    }
+    100% {
+        transform: rotate(1080deg) scale(0);
+        opacity: 0;
+    }
+}
+
+/* 헤더 스타일 */
+header {
+    background-color: #8B4513; /* 갈색 */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* 섹션 스타일 */
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+/* HOME 섹션 스타일 */
+#home {
+    background-color: #fffacd; /* 연한 노랑 */
+    margin-bottom: 0;
+    padding-bottom: 20px; /* 푸터와의 간격을 위한 패딩 */
+    width: 100%; /* 섹션 크기 100%로 */
+    border-bottom: none; /* 경계선 제거 */
+}
+
+/* INTRODUCE 섹션 스타일 */
+#about {
+    background-color: #fffacd; /* 연한 노랑 */
+    margin-bottom: 0;
+    padding-bottom: 20px; /* 푸터와의 간격을 위한 패딩 */
+    width: 100%;
+    border-bottom: none; /* 경계선 제거 */
+}
+
+/* "SOON!" 스타일 */
+#soon {
+    margin-top: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #8B4513; /* 갈색 */
+    text-transform: uppercase;
+}
+
+/* 이미지 섹션 스타일 */
+.image-section {
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* 이미지들을 가운데로 정렬 */
+    gap: 10px; /* 이미지 간격 설정 */
+    margin-top: 30px; /* 위쪽에 마진을 추가하여 공간 확보 */
+}
+
+.home-image {
+    width: 40%; /* 이미지 크기 조정 */
+    height: auto;
+    max-width: 150px; /* 최대 크기 제한 */
+    object-fit: cover; /* 비율에 맞게 크기 조정 */
+}
+
+/* 버튼 스타일 */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* 푸터 스타일 */
+footer {
+    background-color: #8B4513; /* 갈색 */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%; /* 화면 하단에 고정 */
+}
+
+/* 화면 높이 및 푸터 위치 고정 */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto; /* 푸터를 맨 아래로 고정 */
+}

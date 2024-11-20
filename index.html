@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Official_CatDog: CAT + DOG. The future of high-value memecoins.">
+    <meta name="author" content="Official_CatDog">
+    <title>Official_CatDog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Official_CatDog</h1>
+        <nav>
+            <ul>
+                <li><a href="#" id="homeBtn">HOME</a></li>
+                <li><a href="#" id="introduceBtn">INTRODUCE</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HOME 섹션 -->
+    <section id="home" class="visible">
+        <h2>HOME</h2>
+        <p>Official_CatDog is CAT + DOG. We will be on par with Dogecoin and Catcoin.</p>
+
+        <!-- 사진 추가 (푸터 위에 배치) -->
+        <div class="image-section">
+            <img class="home-image" src="https://i.imgur.com/jtRyInQ.jpg" alt="CatDog Image">
+            <img class="home-image" src="https://i.imgur.com/jtRyInQ.jpg" alt="CatDog Image">
+        </div>
+
+        <!-- 버튼 추가 -->
+        <button id="goToPage">Join us on Telegram</button>
+    </section>
+
+    <!-- INTRODUCE 섹션 (처음에는 숨김) -->
+    <section id="about" class="hidden">
+        <h2>INTRODUCE</h2>
+        <p>INTRODUCE 1: We are a high-value memecoin.</p>
+        <p>INTRODUCE 2: If you own this coin, you will become extremely wealthy.</p>
+        <p>INTRODUCE 3: We will work hard to promote this meme coin to make it more popular. (Everyone, please do your best too)</p>
+
+        <!-- "SOON!" 글씨 -->
+        <div id="soon" class="soon hidden">
+            <h3>SOON!</h3>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Official_CatDog</p>
+    </footer>
+
+    <script>
+        // HOME 버튼 클릭 시 HOME 섹션 보이기
+        document.getElementById("homeBtn").addEventListener("click", function() {
+            document.getElementById("home").classList.add("visible");
+            document.getElementById("about").classList.remove("visible");
+        });
+
+        // INTRODUCE 버튼 클릭 시 INTRODUCE 섹션 보이기 및 SOON! 글씨 추가
+        document.getElementById("introduceBtn").addEventListener("click", function() {
+            document.getElementById("home").classList.remove("visible");
+            document.getElementById("about").classList.add("visible");
+            document.getElementById("soon").classList.remove("hidden");
+        });
+
+        // 텔레그램 버튼 클릭 시 텔레그램 페이지로 이동
+        document.getElementById("goToPage").addEventListener("click", function() {
+            window.location.href = "https://t.me/offical_catdog"; // 텔레그램 링크
+        });
+    </script>
+</body>
+</html>
