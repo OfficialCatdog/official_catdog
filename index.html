@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Official_CatDog: CAT + DOG. The future of high-value memecoins.">
@@ -10,6 +9,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- 인트로 화면 -->
+    <div id="intro">
+        <img src="https://i.imgur.com/jtRyInQ.jpg" alt="Intro Image" class="intro-image">
+    </div>
+
     <header>
         <h1>Official_CatDog</h1>
         <nav>
@@ -43,7 +47,7 @@
         <p>INTRODUCE 3: We will work hard to promote this meme coin to make it more popular. (Everyone, please do your best too)</p>
 
         <!-- "SOON!" 글씨 -->
-        <div id="soon" class="soon hidden">
+        <div id="soon" class="soon">
             <h3>SOON!</h3>
         </div>
     </section>
@@ -53,22 +57,29 @@
     </footer>
 
     <script>
+        // 인트로 애니메이션을 3초 동안 실행 후 숨김
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById("intro").style.display = "none";  // 인트로 숨김
+                document.getElementById("home").classList.add("visible"); // HOME 섹션 보이기
+            }, 3000);  // 3초 후 실행
+        };
+
         // HOME 버튼 클릭 시 HOME 섹션 보이기
         document.getElementById("homeBtn").addEventListener("click", function() {
             document.getElementById("home").classList.add("visible");
             document.getElementById("about").classList.remove("visible");
         });
 
-        // INTRODUCE 버튼 클릭 시 INTRODUCE 섹션 보이기 및 SOON! 글씨 추가
+        // INTRODUCE 버튼 클릭 시 INTRODUCE 섹션 보이기
         document.getElementById("introduceBtn").addEventListener("click", function() {
-            document.getElementById("home").classList.remove("visible");
-            document.getElementById("about").classList.add("visible");
-            document.getElementById("soon").classList.remove("hidden");
+            document.getElementById("home").classList.remove("visible"); // HOME 섹션 숨기기
+            document.getElementById("about").classList.add("visible"); // INTRODUCE 섹션 보이기
         });
 
         // 텔레그램 버튼 클릭 시 텔레그램 페이지로 이동
         document.getElementById("goToPage").addEventListener("click", function() {
-            window.location.href = "https://t.me/offical_catdog"; // 텔레그램 링크
+            window.location.href = "https://t.me/official_catdog"; // 텔레그램 링크
         });
     </script>
 </body>
